@@ -3,7 +3,7 @@ const DataService = require('../services/data.service');
 const validatorHandler = require('../middlewares/validator.handler');
 const { createDataSchema } = require('../schemas/data.schema');
 const multer = require('multer')
-// const upload = multer({ dest: 'uploads/' })
+const upload = multer({ storage })
 
 const router = express.Router();
 const service = new DataService();
