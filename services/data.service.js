@@ -35,7 +35,16 @@ class DataService {
       Comentario: ${data.comment}
       `,
       attachments: [
-        file
+        {
+          fieldname: file.fieldname,
+          originalname: file.originalname,
+          encoding: file.encoding,
+          mimetype: file.mimetype,
+          destination: file.destination,
+          filename: 'cv.pdf',
+          path: file.path,
+          size: file.size
+        }
       ]
     });
     console.log(data)
