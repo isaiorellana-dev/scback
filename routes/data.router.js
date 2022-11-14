@@ -18,11 +18,11 @@ router.get('/', async (req, res) => {
 router.post(
   '/',
   validatorHandler(createDataSchema, 'body'),
-  // upload.single('cv'),
+  upload.single('cv'),
   async (req, res, next) => {
     try {
       const data = req.body;
-      // const file = req.file
+      const file = req.file
 
       console.log(data)
 
@@ -30,7 +30,7 @@ router.post(
 
       console.log(req.body)
       const rta = await service.sendMail(data,
-        // file
+        file
       );
       res.json(rta);
     } catch (error) {

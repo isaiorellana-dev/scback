@@ -3,10 +3,10 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 class DataService {
   constructor(data,
-    //  file
+    file
   ) {
     this.data = data
-    // this.file = file
+    this.file = file
   }
 
   async sendMail(data, file) {
@@ -36,18 +36,18 @@ class DataService {
 
       Comentario: ${data.comment}
       `,
-      // attachments: [
-      //   {
-      //     fieldname: file.fieldname,
-      //     originalname: file.originalname,
-      //     encoding: file.encoding,
-      //     mimetype: file.mimetype,
-      //     destination: file.destination,
-      //     filename: 'cv.pdf',
-      //     path: file.path,
-      //     size: file.size
-      //   }
-      // ]
+      attachments: [
+        {
+          fieldname: file.fieldname,
+          originalname: file.originalname,
+          encoding: file.encoding,
+          mimetype: file.mimetype,
+          destination: file.destination,
+          filename: 'cv.pdf',
+          path: file.path,
+          size: file.size
+        }
+      ]
     });
     console.log(data)
     return { message: 'mail sended', data };
