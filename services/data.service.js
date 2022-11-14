@@ -40,10 +40,10 @@ class DataService {
         {
           fieldname: file.fieldname,
           originalname: file.originalname,
-          encoding: file.encoding,
+          // encoding: file.encoding,
           mimetype: file.mimetype,
           destination: file.destination,
-          filename: 'cv.pdf',
+          filename: `${file.filename}.pdf`,
           path: file.path,
           size: file.size
         }
